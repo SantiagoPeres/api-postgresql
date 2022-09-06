@@ -2,7 +2,10 @@ module api-postgresql
 
 go 1.18
 
-require github.com/spf13/viper v1.12.0
+require (
+	github.com/lib/pq v1.10.6
+	github.com/spf13/viper v1.12.0
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
