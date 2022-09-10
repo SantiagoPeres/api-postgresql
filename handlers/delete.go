@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/go-chi/chi"
 )
 
 func Delete(w http.ResponseWriter, r *http.Request) {
@@ -16,7 +18,8 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rows, err := models.Delete(int64(id)=)
+	var todo models.Todo
+	rows, err := models.Delete(int64(id), todo)
 	if err != nil {
 		log.Printf("Erro ao remover registro: %v", err)
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
